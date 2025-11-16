@@ -1,0 +1,258 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+    gap: 1rem;
+}
+
+/* Left side: logo + location */
+.navbar__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar__logo {
+    width: 50px;
+    cursor: pointer;
+}
+
+/* Location selector */
+.navbar__location {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 140px;
+    padding: 6px 12px 6px 36px;
+    /* padding-left for search icon */
+    border: 1.5px solid #1c3a48;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1c3a48;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.navbar__location span {
+    margin: 0;
+    padding: 0;
+}
+
+/* Search icon inside location */
+.navbar__search-icon {
+    position: absolute;
+    left: 10px;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    filter: invert(27%) sepia(75%) saturate(430%) hue-rotate(165deg) brightness(90%) contrast(95%);
+}
+
+/* Dropdown arrow */
+.navbar__arrow {
+    width: 14px;
+    height: 14px;
+    filter: invert(27%) sepia(75%) saturate(430%) hue-rotate(165deg) brightness(90%) contrast(95%);
+}
+
+/* Center: search input + button */
+.navbar__search {
+    flex-grow: 1;
+    display: flex;
+    max-width: 700px;
+    /* increased width */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.navbar__search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+.navbar__search-button {
+    background-color: #002f34;
+    border: none;
+    padding: 0 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__search-button img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+/* Right side */
+.navbar__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.navbar__language {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: #444;
+}
+
+.navbar__language span {
+    margin-right: 0.25rem;
+}
+
+.navbar__icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar__icon-button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Login link */
+.navbar__login {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Sell button */
+.navbar__add-button {
+    width: 90px;
+    height: 36px;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 0 5px rgba(0, 153, 122, 0.7);
+    object-fit: contain;
+    user-select: none;
+    border: 2.5px solid #00a6a1;
+    position: relative;
+    background-color: white;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 12px;
+}
+
+/* Yellow highlight bar on left side */
+.navbar__add-button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background-color: #ffd600;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navbar__add-button:hover {
+    box-shadow: 0 0 8px rgba(0, 166, 161, 0.9);
+    border-color: #007e7a;
+}
+
+.navbar__user-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar__dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    display: none;
+    z-index: 1000;
+}
+
+.navbar__user-dropdown:hover .navbar__dropdown-menu {
+    display: block;
+}
+
+/* Hamburger toggle button - hidden on desktop */
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+.navbar__toggle-bar {
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Show hamburger */
+    .navbar__toggle {
+        display: flex;
+    }
+
+    /* Hide center and right sections initially */
+    .navbar__search,
+    .navbar__right,
+    .navbar__location {
+        display: none;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    /* Show menu when active */
+    .navbar.active .navbar__search,
+    .navbar.active .navbar__right,
+    .navbar.active .navbar__location {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .navbar__search {
+        max-width: 100%;
+    }
+
+    .navbar__right {
+        justify-content: flex-start;
+        font-size: 1rem;
+    }
+
+    .navbar__location {
+        padding-left: 36px;
+
+    }
+}

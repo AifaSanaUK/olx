@@ -1,0 +1,157 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.login-modal {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.slide-content img {
+    width: 99px;
+    margin-bottom: 15px;
+}
+
+.slide-content p {
+    font-size: 19px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    /* Vertically center items */
+    gap: 8px;
+    /* Optional: adds space between the image and text */
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.phone {
+    color: rgb(96, 147, 250);
+    background-color: transparent;
+    border: 2px solid darkblue;
+    font-weight: bold;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.phone:hover {
+    background-color: rgba(56, 16, 214, 0.2);
+    /* Light blue background on hover */
+}
+
+
+.google {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.google img {
+    height: 20px;
+    width: 20px;
+}
+
+
+.or {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.email-login {
+    text-decoration: underline;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.privacy-text {
+    font-size: 13px;
+    color: grey;
+}
+
+.tag {
+    color: blue;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.back {
+    margin-top: 10px;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
